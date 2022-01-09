@@ -26,7 +26,7 @@ public class SignUpActivity extends AppCompatActivity {
 
         signupBtn = findViewById(R.id.signUpBtn);
         email = findViewById(R.id.loginEmail);
-        pw = findViewById(R.id.loginPasswordText);
+        pw = findViewById(R.id.loginPassword);
 
         signupBtn.setOnClickListener(new View.OnClickListener() {
             @Override

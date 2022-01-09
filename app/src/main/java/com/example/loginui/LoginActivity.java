@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
     private TextView loginPassword,loginEmail;
@@ -34,6 +35,18 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 SharedPreferences sharedPreferences = getSharedPreferences("abc",MODE_PRIVATE);
                 String fuserName = sharedPreferences.getString("username","");
+                String fpassword= sharedPreferences.getString("password","");
+
+                String uuser = loginEmail.getText().toString();
+                String upassword = loginPassword.getText().toString();
+
+                if(fuserName.equals(uuser) && fpassword.equals(upassword)){
+
+                    Toast.makeText(LoginActivity.this, "login succeed", Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(LoginActivity.this,"in correct username",Toast.LENGTH_SHORT).show();
+
+                }
                 Intent intent = new Intent(LoginActivity.this,MainActivity.class);
                 startActivity(intent);
             }
